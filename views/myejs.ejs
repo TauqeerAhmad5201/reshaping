@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reshaping</title>
+
+    <style>
+        .container {
+            height: 30vh;
+            width: 160px;
+            border: 2px solid orange;
+            border-radius: 2px;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+
+
+    <form action="/index.js" method="post">
+        <label for="Height">Heigth</label>
+        <input type="number" name="height" id="height">
+        <!-- <label for="Width">Width</label>
+        <input type="text" name="width" id="width"> -->
+
+        <label for="Width">Width</label>
+        <input type="number" placeholder="Size" id="width" name="width">
+        <button id="btn" type="submit">Ok !</button>
+    </form>
+
+
+    <script src="index.js"></script>
+    <script>
+        let buttonElement = document.querySelector('#btn');
+        let contain = document.querySelector(".container");
+        // let inputVal = document.getElementById("myInput").value;
+        let width = '<%-my_width%>'
+
+        buttonElement.addEventListener('click', function () {
+            contain.style.width = `${width}px` ;
+
+        });
+    </script>
+</body>
+
+</html>
